@@ -1,0 +1,44 @@
+{
+  "name": "NC_Bus_Safety",
+  "version": "0.1",
+  "license": "GPL-3.0",
+  "author": "Devin Cremins",
+  "description": "2019 Website Redesign for NC Bus Safety and sub-sites",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp compile",
+    "serve": "gulp serve",
+    "start": "gulp build"
+  },
+  "dependencies": {
+    "uswds": "^2.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "connect-gzip-static": "^2.1.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "del": "^4.0.0",
+    "fancy-log": "^1.3.3",
+    "favicons": "^5.3.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.3.1",
+    "gulp-gzip": "^1.4.2",
+    "gulp-hub": "^4.2.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-optimize-js": "^1.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-responsive": "^2.13.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.17.2",
+    "snyk": "^1.147.2",
+    "uglify-es": "^3.3.9"
+  }
+}

@@ -1,0 +1,21 @@
+const gulp = require('gulp')
+const concat = require('gulp-concat')
+const del = require('del')
+const optimizejs = require('gulp-optimize-js')
+const plumber = require('gulp-plumber')
+const rename = require('gulp-rename')
+const sourcemaps = require('gulp-sourcemaps')
+const composer = require('gulp-uglify/composer')
+const uglify = require('uglify-es')
+const minify = composer(uglify, console)
+
+
+gulp.task('javascript', () => {
+	return gulp.src('./src/scripts/*.js')
+		.pipe(plumber())
+		.pipe(concat({path: 'functions.js', cwd: ''}))
+		.pipe(minify())
+    .pipe(optimizejs())
+		.pipe(rename('bundled'))
+		.pipe(gulp.dest('./wp-content/themes/nc_bus_safety/'))
+})
