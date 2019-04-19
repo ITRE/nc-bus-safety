@@ -53,3 +53,13 @@ gulp.task('compile', gulp.series(
   ()=>{return del('./holder')},
   ()=>{return del('./build')}
 ))
+
+gulp.task('watch', () => {
+  gulp.watch('src/styles/*.scss', gulp.series('css')),
+  gulp.watch('src/scripts/*.js', gulp.series('javascript')),
+  gulp.watch('src/assets/*', gulp.series('images', 'imageMin')),
+  gulp.watch('src/**/*.php', gulp.series('php'))
+  return
+})
+
+gulp.task('build', gulp.series('compile', 'watch'))

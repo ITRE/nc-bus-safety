@@ -13,7 +13,7 @@ const minify = composer(uglify, console)
 gulp.task('javascript', () => {
 	return gulp.src('./src/scripts/*.js')
 		.pipe(plumber())
-		.pipe(concat({path: 'functions.js', cwd: ''}))
+		.pipe(concat({path: 'bundled.js', cwd: ''}))
 		.pipe(minify())
     .pipe(optimizejs())
 		.pipe(rename('bundled'))

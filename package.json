@@ -7,8 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp compile",
-    "serve": "gulp serve",
-    "start": "gulp build"
+    "watch": "gulp build",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down"
   },
   "dependencies": {
     "uswds": "^2.0.1"

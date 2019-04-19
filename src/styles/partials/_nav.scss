@@ -1,0 +1,19 @@
+.usa-sidenav {
+  a:hover {
+    color: $primary
+  }
+  .usa-current:after {
+    background-color: $primary;
+  }
+}
+
+@media (min-width: 40em) {
+  .usa-sidenav {
+    a:hover {
+      color: $primary
+    }
+    .usa-current:after {
+      background-color: $primary;
+    }
+  }
+}
