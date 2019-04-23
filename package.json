@@ -11,9 +11,6 @@
     "start": "docker-compose up -d",
     "stop": "docker-compose down"
   },
-  "dependencies": {
-    "uswds": "^2.0.1"
-  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "connect-gzip-static": "^2.1.1",

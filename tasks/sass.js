@@ -34,7 +34,7 @@ gulp.task('css', gulp.series('sass', ()=>{
     mqpacker({ sort: true }),
     cssnano(({ autoprefixer: autoprefixerOptions}))
   ]
-  return gulp.src('./holder/styles/style')
+  return gulp.src('./holder/styles/*')
 	  .pipe(plumber())
 		.pipe(sourcemaps.init())
     .pipe(autoprefixer(autoprefixerOptions))

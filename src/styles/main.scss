@@ -7,16 +7,8 @@ Version: 0.1
 */
 @import 'partials/reset';
 
-@import './node_modules/uswds/dist/scss/theme/uswds-theme-general';
-@import './node_modules/uswds/dist/scss/theme/uswds-theme-typography';
-@import './node_modules/uswds/dist/scss/theme/uswds-theme-spacing';
-@import './node_modules/uswds/dist/scss/theme/uswds-theme-color';
-
-@import './node_modules/uswds/dist/scss/theme/uswds-theme-utilities';
-
 @import 'partials/variables';
 
-@import './node_modules/uswds/dist/scss/uswds';
-
 @import 'partials/body';
+@import 'partials/typography';
 @import 'partials/nav';

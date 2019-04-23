@@ -10,3 +10,35 @@ header+main {
   border-top: 1px solid #dcdee0;
   border-bottom: 1px solid #dcdee0;
 }
+
+@media (min-width: 40em) {
+  .banner{
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    padding: 20px;
+    width: 100%;
+
+    .brand {
+      flex: 1;
+    }
+  }
+
+
+  .wrapper {
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    width: 100%;
+
+    .sidebar {
+      margin: 50px 50px 0 0;
+      width: 200px;
+    }
+
+    .content {
+      flex: 1;
+      margin-top: 50px;
+    }
+  }
+}

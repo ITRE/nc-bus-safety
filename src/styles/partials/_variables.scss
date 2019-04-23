@@ -1,2 +1,79 @@
-$primary: #386481;
-$secondary: #FFD800;
+$primary: #44799C;
+$primary-light: #8AB2CC;
+$primary-lightest: #DBE7EF;
+$primary-dark: #00486F;
+$primary-darkest: #00334D;
+
+$colors: (
+  primary: (
+    base: #44799C,
+    light: #8AB2CC,
+    lighter: #DBE7EF,
+    dark: #00486F,
+    darker: #00334D
+  ),
+  secondary: (
+    base: #FFD800,
+    light: #FFD800,
+    lighter: #FFD800,
+    dark: #FFD800,
+    darker: #FFD800
+  ),
+  grey: (
+    base: #757575,
+    light: #adadad,
+    lighter: #e6e6e6,
+    dark: #5c5c5c,
+    darker: #454545
+  ),
+  text: (
+    base: #1b1b1b
+  )
+);
+
+// Allows access to color map by useing colors(main, color)
+// i.e. colors(primary, lighter) returns #DBE7EF
+@function colors($keys...) {
+  $value: $colors;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
+
+$type-scale: (
+  '-3': 13px,
+  '-2': 14px,
+  '-1':  15px,
+  'base':  16px,
+  '1':  17px,
+  '2':  22px,
+  '3':  32px,
+  '4': 40px,
+  '5': 48px,
+);
+
+$line-height: (
+  1: 1,
+  2: 1.2,
+  3: 1.35,
+  4: 1.5,
+  5: 1.62,
+  6: 1.75,
+);
+
+$font-stack-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+@mixin font($family, $size, $weight) {
+  font-family: $family;
+  font-size: font-size($size);
+  font-weight: $weight;
+}
+
+@function font-size($size) {
+  @if not $size {
+    @return false;
+  }
+  @return (map-get($type-scale, $size) / map-get($type-scale, 'base')) * 1rem;
+
+}

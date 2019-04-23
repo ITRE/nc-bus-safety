@@ -11,7 +11,7 @@ function register_my_menus() {
   ]);
 }
 add_action( 'init', __NAMESPACE__ . '\\register_my_menus' );
-
+/*
 function change_side_nav_ul_class( $args ) {
   if( 'header-nav' != $args['theme_location'] && 'footer-nav' != $args['theme_location']) {
     $args['menu_class'] = 'usa-sidenav';
@@ -42,7 +42,7 @@ function change_submenu_class($menu) {
   return $menu;
 }
 add_filter('wp_nav_menu',__NAMESPACE__ . '\\change_submenu_class');
-
+*/
 /*
 *   Sidebars
 */

@@ -1,19 +1,91 @@
-.usa-sidenav {
-  a:hover {
-    color: $primary
-  }
-  .usa-current:after {
-    background-color: $primary;
-  }
-}
 
 @media (min-width: 40em) {
-  .usa-sidenav {
-    a:hover {
-      color: $primary
+  .header_nav {
+    background-color: colors(secondary, base);
+    width: 100%;
+
+    .primary {
+      display: flex;
+      margin: auto;
+      max-width: 1000px;
+      padding: 5px;
+      width: 100%;
+
+      .menu-item a {
+        border-right: 2px solid colors(grey, darker);
+        color: colors(text, base);
+        display: block;
+        font-weight: bold;
+        padding: 10px 20px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: white;
+          text-decoration: underline;
+        }
+      }
+
+      .sub-menu,
+      .menu-item:hover .sub-menu .sub-menu {
+        display: none;
+
+        .menu-item a {
+          border: 5px solid colors(grey, lighter);
+          border-top: 5px solid colors(secondary, base);
+        }
+      }
+
+      .menu-item:hover .sub-menu,
+      .menu-item:hover .sub-menu .menu-item:hover .sub-menu{
+        background-color: colors(secondary, base);
+        display: block;
+        position: absolute;
+
+        a {
+          background-color: colors(grey, lighter);
+          border: 5px solid colors(grey, lighter);
+        }
+      }
+
+      .menu-item:last-child a {
+        border-right: 5px solid colors(secondary, base);
+      }
     }
-    .usa-current:after {
-      background-color: $primary;
+  }
+
+  .sidebar_widget .menu {
+    border-bottom: 1px solid colors(grey, lighter);
+
+    .menu-item {
+      border-top: 1px solid colors(grey, lighter);
+      margin-bottom: 5px;
+      padding-top: 5px;
     }
+
+    a {
+      color: colors(text, base);
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+
+    .current-menu-item a {
+      border-left: 3px solid colors(primary, base);
+      color: colors(primary, base);
+      font-weight: bold;
+    }
+
+    .sub-menu {
+      margin-top: 5px;
+
+      .menu-item a {
+        margin-left: 15px;
+      }
+
+      .sub-menu .menu-item a {
+        margin-left: 40px;
+      }
+    }
+
   }
 }

@@ -1,0 +1,50 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+li {
+  //font-family: $font-stack-system;
+  //font-size: 16px;
+  //font-weight: normal;
+  @include font($font-stack-system, 'base', normal);
+  color: colors(text, base)
+}
+
+a {
+  color: colors(primary, base)
+}
+
+small {
+  @include font($font-stack-system, '-2', lighter);
+}
+
+h1 {
+  @include font($font-stack-system, '3', bold);
+  color: colors(primary, base)
+}
+
+h2 {
+  @include font($font-stack-system, '2', bold);
+}
+
+h3 {
+  @include font($font-stack-system, '1', bold);
+  color: colors(primary, base)
+}
+
+h4 {
+  @include font($font-stack-system, 'base', bold);
+}
+
+h5 {
+  @include font($font-stack-system, '-1', bold);
+}
+
+h6 {
+  @include font($font-stack-system, '-2', bold);
+}
