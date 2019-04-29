@@ -1,23 +1,114 @@
+.mobile {
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-flow: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s;
 
-@media (min-width: 40em) {
-  .header_nav {
+  a {
     background-color: colors(secondary, base);
+    border: 2px solid colors(secondary, base);
+    box-sizing: border-box;
+    color: colors(text, base);
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
     width: 100%;
 
+    &:hover {
+      background-color: white;
+      color: colors(text, base);
+      text-decoration: underline;
+    }
+  }
+
+  .sub-menu a {
+    background-color: white;
+    border: none;
+    color: colors(text, base);
+  }
+}
+
+.hamburger {
+  background-color: colors(secondary, base);
+  border: 2px solid colors(secondary, base);
+  box-sizing: border-box;
+  width: 100%;
+
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::after,
+  .hamburger-inner::before {
+    background-color: colors(text, base);
+  }
+
+  &.is-active {
+    background-color: colors(text, base);
+
+    .hamburger-inner,
+    .hamburger-inner::after,
+    .hamburger-inner::before {
+      background-color: colors(secondary, base);
+    }
+
+    +.mobile {
+      max-height: 600px;
+    }
+  }
+}
+
+.header_nav {
+  background-color: colors(secondary, base);
+  box-sizing: border-box;
+  display: none;
+  padding: 0 20px;
+  width: 100%;
+  @include for-tablet-portrait-up {
+    display: block;
+    box-sizing: border-box;
+  }
+
     .primary {
-      display: flex;
+      box-sizing: border-box;
       margin: auto;
       max-width: 1000px;
       padding: 5px;
       width: 100%;
 
+      @include for-tablet-portrait-up {
+        box-sizing: border-box;
+        display: flex;
+        max-width: 800px;
+
+        .menu-item:first-child a {
+          padding-left: 0;
+        }
+
+        .menu-item:last-child a {
+          border: none;
+        }
+      }
+
+      @include for-desktop-up {
+        width: 80%;
+        max-width: 1000px;
+      }
+
       .menu-item a {
-        border-right: 2px solid colors(grey, darker);
         color: colors(text, base);
         display: block;
         font-weight: bold;
-        padding: 10px 20px;
+        padding: 10px;
         text-decoration: none;
+        @include for-tablet-portrait-up {
+          border-right: 2px solid colors(grey, darker);
+          padding: 10px 20px;
+        }
 
         &:hover {
           background-color: white;
@@ -25,67 +116,77 @@
         }
       }
 
-      .sub-menu,
-      .menu-item:hover .sub-menu .sub-menu {
-        display: none;
-
-        .menu-item a {
-          border: 5px solid colors(grey, lighter);
-          border-top: 5px solid colors(secondary, base);
+      .sub-menu {
+        background-color: white;
+        margin-left: 10px;
+        padding-bottom: 5px;
+        @include for-tablet-portrait-up {
+          display: none;
         }
-      }
 
-      .menu-item:hover .sub-menu,
-      .menu-item:hover .sub-menu .menu-item:hover .sub-menu{
-        background-color: colors(secondary, base);
-        display: block;
-        position: absolute;
-
-        a {
-          background-color: colors(grey, lighter);
-          border: 5px solid colors(grey, lighter);
+        .sub-menu {
+          border-left: 5px solid colors(secondary, base);
+          @include for-tablet-portrait-up {
+            display: none;
+          }
         }
-      }
-
-      .menu-item:last-child a {
-        border-right: 5px solid colors(secondary, base);
       }
     }
+}
+
+@include for-tablet-portrait-up {
+  .header_nav .sub-menu .menu-item a,
+  .header_nav .sub-menu .sub-menu .menu-item a {
+    border: 5px solid colors(grey, lighter);
+    border-top: 5px solid colors(secondary, base);
   }
 
-  .sidebar_widget .menu {
-    border-bottom: 1px solid colors(grey, lighter);
-
-    .menu-item {
-      border-top: 1px solid colors(grey, lighter);
-      margin-bottom: 5px;
-      padding-top: 5px;
-    }
+  .header_nav .menu-item:hover .sub-menu,
+  .header_nav .menu-item:hover .sub-menu .menu-item:hover .sub-menu {
+    background-color: colors(secondary, base);
+    display: block;
+    position: absolute;
 
     a {
-      color: colors(text, base);
-      display: block;
-      padding: 5px 10px;
-      text-decoration: none;
+      background-color: colors(grey, lighter);
+      border: 5px solid colors(grey, lighter);
+    }
+  }
+}
+
+
+
+.sidebar_widget .menu {
+  border-bottom: 1px solid colors(grey, lighter);
+
+  .menu-item {
+    border-top: 1px solid colors(grey, lighter);
+    margin-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  a {
+    color: colors(text, base);
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+  .current-menu-item a {
+    border-left: 3px solid colors(primary, base);
+    color: colors(primary, base);
+    font-weight: bold;
+  }
+
+  .sub-menu {
+    margin-top: 5px;
+
+    .menu-item a {
+      margin-left: 15px;
     }
 
-    .current-menu-item a {
-      border-left: 3px solid colors(primary, base);
-      color: colors(primary, base);
-      font-weight: bold;
+    .sub-menu .menu-item a {
+      margin-left: 40px;
     }
-
-    .sub-menu {
-      margin-top: 5px;
-
-      .menu-item a {
-        margin-left: 15px;
-      }
-
-      .sub-menu .menu-item a {
-        margin-left: 40px;
-      }
-    }
-
   }
 }

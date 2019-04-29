@@ -7,8 +7,13 @@ Version: 0.1
 */
 @import 'partials/reset';
 
+@import 'hamburgers/hamburgers';
+
 @import 'partials/variables';
+@import 'partials/mixins';
 
 @import 'partials/body';
 @import 'partials/typography';
 @import 'partials/nav';
+@import 'partials/footer';
+@import 'partials/search';

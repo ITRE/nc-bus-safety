@@ -16,6 +16,6 @@ gulp.task('javascript', () => {
 		.pipe(concat({path: 'bundled.js', cwd: ''}))
 		.pipe(minify())
     .pipe(optimizejs())
-		.pipe(rename('bundled'))
+		.pipe(rename('bundled.js'))
 		.pipe(gulp.dest('./wp-content/themes/nc_bus_safety/'))
 })

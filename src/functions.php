@@ -11,38 +11,8 @@ function register_my_menus() {
   ]);
 }
 add_action( 'init', __NAMESPACE__ . '\\register_my_menus' );
-/*
-function change_side_nav_ul_class( $args ) {
-  if( 'header-nav' != $args['theme_location'] && 'footer-nav' != $args['theme_location']) {
-    $args['menu_class'] = 'usa-sidenav';
-    //$args['before'] = 'usa-sidenav__item';
-  }
-  return $args;
-}
-add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\\change_side_nav_ul_class' );
 
-function change_side_nav_li_class( $classes, $item, $args, $depth ) {
-  if ( 'usa-sidenav' === $args->menu_class ) {
-    $newClasses = ['usa-sidenav__item'];
-  } else if ($depth > 0) {
-    $newClasses = ['usa-nav__submenu-item'];
-  } else {
-    $newClasses = ['usa-nav__primary-item'];
-  }
-  if (in_array('current-menu-item', $classes)) {
-    $newClasses[] = 'usa-current';
-  }
-    return $newClasses;
-}
 
-add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\\change_side_nav_li_class', 10, 4 );
-
-function change_submenu_class($menu) {
-  $menu = preg_replace('/ class="sub-menu"/','/ class="usa-nav__submenu" /',$menu);
-  return $menu;
-}
-add_filter('wp_nav_menu',__NAMESPACE__ . '\\change_submenu_class');
-*/
 /*
 *   Sidebars
 */
@@ -64,7 +34,89 @@ add_action( 'widgets_init', __NAMESPACE__ . '\\register_my_widgets' );
 */
 function register_my_css() {
   wp_enqueue_style('bus-safety', get_stylesheet_directory_uri() . '/style.css', false, null);
+  wp_enqueue_script('mobile-toggle', get_stylesheet_directory_uri() . '/bundled.js', ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_my_css', 100);
+
+
+/*
+*   Customizer
+*/
+
+function customize_register($wp_customize) {
+  $wp_customize->add_setting('address_org')->transport = 'postMessage';
+  $wp_customize->add_control('address_org',
+  array(
+  'label'     => 'Organization',
+  'section'   => 'title_tagline',
+  'settings'  => 'address_org',
+  'type'      => 'text'
+  ) );
+
+  $wp_customize->add_setting('address_textbox')->transport = 'postMessage';
+  $wp_customize->add_control('address_textbox',
+  array(
+  'label'     => 'Address',
+  'section'   => 'title_tagline',
+  'settings'  => 'address_textbox',
+  'type'      => 'textarea'
+  ) );
+
+  $wp_customize->add_setting('org_phone')->transport = 'postMessage';
+  $wp_customize->add_control('org_phone',
+  array(
+  'label'     => 'Phone Number',
+  'section'   => 'title_tagline',
+  'settings'  => 'org_phone',
+  'type'      => 'text'
+  ) );
+
+  $wp_customize->add_setting('org_fax')->transport = 'postMessage';
+  $wp_customize->add_control('org_fax',
+  array(
+  'label'     => 'Fax Number',
+  'section'   => 'title_tagline',
+  'settings'  => 'org_fax',
+  'type'      => 'text'
+  ) );
+
+  $wp_customize->add_section( 'social_media' , array(
+    'title'      => __( 'Social Media', 'research' ),
+    'priority'   => 30,
+  ) );
+  $wp_customize->add_setting('social_media_facebook')->transport = 'postMessage';
+  $wp_customize->add_control('social_media_facebook',
+  array(
+  'label'     => 'Organization Facebook URL',
+  'section'   => 'social_media',
+  'settings'  => 'social_media_facebook',
+  'type'      => 'text'
+  ) );
+  $wp_customize->add_setting('social_media_twitter')->transport = 'postMessage';
+  $wp_customize->add_control('social_media_twitter',
+  array(
+  'label'     => 'Organization Twitter URL',
+  'section'   => 'social_media',
+  'settings'  => 'social_media_twitter',
+  'type'      => 'text'
+  ) );
+  $wp_customize->add_setting('social_media_insta')->transport = 'postMessage';
+  $wp_customize->add_control('social_media_insta',
+  array(
+  'label'     => 'Organization Instagram URL',
+  'section'   => 'social_media',
+  'settings'  => 'social_media_insta',
+  'type'      => 'text'
+  ) );
+  $wp_customize->add_setting('social_media_rss')->transport = 'postMessage';
+  $wp_customize->add_control('social_media_rss',
+  array(
+  'label'     => 'Organization RSS URL',
+  'section'   => 'social_media',
+  'settings'  => 'social_media_rss',
+  'type'      => 'text'
+  ) );
+}
+add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 
 ?>

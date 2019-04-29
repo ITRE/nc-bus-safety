@@ -1,0 +1,41 @@
+@include for-tablet-landscape-up {
+  .search-form {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+
+    .search-submit {
+      align-self: center;
+      background-color: colors(primary, base);
+      color: colors(text, inverse);
+      height: 22px;
+      padding: 3px 8px;
+      width: 30px;
+    }
+
+    .search-label {
+      align-self: center;
+      box-sizing: border-box;
+      flex: 1;
+
+      input {
+        border-radius: 0;
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.search-form {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .search-form {
+    margin: 0;
+    max-width: 250px;
+  }
+}

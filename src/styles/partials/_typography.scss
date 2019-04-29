@@ -1,3 +1,8 @@
+body {
+  @include font($font-stack-system, 'base', normal);
+  line-height: map-get($line-height, 1);
+}
+
 h1,
 h2,
 h3,
@@ -12,33 +17,42 @@ li {
   //font-size: 16px;
   //font-weight: normal;
   @include font($font-stack-system, 'base', normal);
-  color: colors(text, base)
+  color: colors(text, base);
+}
+
+p {
+  line-height: map-get($line-height, 2);
+  margin-bottom: space-after(2, 1);
 }
 
 a {
-  color: colors(primary, base)
+  color: colors(primary, base);
 }
 
 small {
   @include font($font-stack-system, '-2', lighter);
 }
 
+strong {
+  font-weight: bold;
+}
+
 h1 {
-  @include font($font-stack-system, '3', bold);
-  color: colors(primary, base)
+  @include font($font-stack-system, '4', bold);
+  color: colors(primary, base);
 }
 
 h2 {
-  @include font($font-stack-system, '2', bold);
+  @include font($font-stack-system, '3', normal);
 }
 
 h3 {
-  @include font($font-stack-system, '1', bold);
-  color: colors(primary, base)
+  @include font($font-stack-system, '2', bold);
+  color: colors(primary, base);
 }
 
 h4 {
-  @include font($font-stack-system, 'base', bold);
+  @include font($font-stack-system, '1', normal);
 }
 
 h5 {
@@ -47,4 +61,9 @@ h5 {
 
 h6 {
   @include font($font-stack-system, '-2', bold);
+}
+
+.content header,
+article header {
+  margin-bottom: space-after(2, 1);
 }
