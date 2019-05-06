@@ -1,11 +1,11 @@
 {
   "name": "NC_Bus_Safety",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "GPL-3.0",
   "author": "Devin Cremins",
   "description": "2019 Website Redesign for NC Bus Safety and sub-sites",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "snyk test",
     "build": "gulp compile",
     "watch": "gulp build",
     "start": "docker-compose up -d",

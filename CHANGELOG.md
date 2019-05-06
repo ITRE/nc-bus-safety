@@ -17,3 +17,6 @@
 * Add Changelog
 * move functions to separate files
 * add basic CPT for surplus
+
+= 0.2.1 =
+* Update packages
