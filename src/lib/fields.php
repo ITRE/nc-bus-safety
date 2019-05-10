@@ -10,8 +10,8 @@ namespace Bus\Fields;
 // Check if ACF is used with another plugin, if not already called, use this one
 if (!class_exists('acf')) {
   // Define path and URL to the ACF plugin.
-  define( 'MY_ACF_PATH', get_stylesheet_directory() . '/acf/' );
-  define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/acf/' );
+  define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
+  define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
 
   // Include the ACF plugin.
   include_once( MY_ACF_PATH . 'acf.php' );
