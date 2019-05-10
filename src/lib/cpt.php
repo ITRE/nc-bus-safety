@@ -18,25 +18,14 @@ function surplus_post_type() {
         'not_found'           => __('No Surplus found.'),
         'not_found_in_trash'  => __('No Surplus found in Trash.'),
       ],
-			'rewrite'				=> array(
-				'slug' 				=> 'archive',
-			  'with_front' 	=> false,
-			),
       'public'        => true,
       'query_var'     => true,
       'has_archive'   => true,
       'menu_icon'     => 'dashicons-tag',
-      'supports'      => array('title', 'editor', 'author'),
-      'taxonomies'    => array('category'),
+      'supports'      => array('title', 'editor', 'author')
     ]);
 }
 
 add_action('init', __NAMESPACE__ . '\\surplus_post_type');
-
-function loop_filter($query) {
-	if (!is_admin() && ($query->is_main_query())) {
-		$query->set('post_type', array('post', 'page', 'surplus'));
-	}
-}
 
 ?>

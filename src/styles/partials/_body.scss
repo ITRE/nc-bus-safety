@@ -22,6 +22,13 @@ main {
 
   @include for-tablet-portrait-up {
     max-width: 800px;
+    display: flex;
+    margin: 0 auto;
+
+    .sidebar {
+      margin: 0 50px 0 0;
+      width: 200px;
+    }
   }
 
   @include for-desktop-up {
@@ -33,7 +40,8 @@ main {
     margin: 40px auto;
 
     @include for-tablet-portrait-up {
-      margin: auto;
+      flex: 1;
+      margin: 0 auto;
     }
   }
 }
@@ -92,22 +100,4 @@ footer {
   box-sizing: border-box;
   border-top: 1px solid #dcdee0;
   border-bottom: 1px solid #dcdee0;
-}
-
-
-
-@include for-tablet-portrait-up {
-  .wrapper {
-    box-sizing: border-box;
-    display: flex;
-    margin: auto;
-    .sidebar {
-      margin: 0 50px 0 0;
-      width: 200px;
-    }
-
-    .content {
-      flex: 1;
-    }
-  }
 }

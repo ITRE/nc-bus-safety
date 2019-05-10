@@ -5,6 +5,7 @@ $include = [
   '/lib/customizer.php',      // Register Customizer Fields
   '/lib/menus.php',       		// Register Menus and Sidebars
   '/lib/styles.php',       		// Register Styles and Scripts
+  '/lib/fields.php',       		// Register Custom Fields
   '/lib/cpt.php',       			// Register Post Type
 ];
 
