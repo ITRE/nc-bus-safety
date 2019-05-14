@@ -37,6 +37,10 @@ strong {
   font-weight: bold;
 }
 
+em {
+  font-style: italic; 
+}
+
 h1 {
   @include font($font-stack-system, '4', bold);
   color: colors(primary, base);

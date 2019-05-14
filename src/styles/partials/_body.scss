@@ -8,11 +8,16 @@ body {
 
 main {
   flex: auto;
+  margin-bottom: 50px;
   padding: 0 20px;
+}
 
-  @include for-tablet-landscape-up {
-    padding: 0;
-  }
+.primary {
+  color: colors(primary, base);
+}
+
+.secondary {
+  color: colors(secondary, base);
 }
 
 .wrapper {
@@ -21,7 +26,7 @@ main {
   width: 100%;
 
   @include for-tablet-portrait-up {
-    max-width: 800px;
+    max-width: 1000px;
     display: flex;
     margin: 0 auto;
 
@@ -29,11 +34,6 @@ main {
       margin: 0 50px 0 0;
       width: 200px;
     }
-  }
-
-  @include for-desktop-up {
-    width: 80%;
-    max-width: 1000px;
   }
 
   .content {
@@ -50,21 +50,22 @@ main {
   box-sizing: border-box;
   display: flex;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
+  justify-content: space-between;
   width: 100%;
 
-  @include for-tablet-portrait-up {
-    max-width: 800px;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
+  @include for-tablet-portrait-up {
     .brand {
       flex: 1;
+      max-width: 400px;
     }
   }
 
-  @include for-desktop-up {
-    width: 80%;
-    max-width: 1000px;
-  }
 }
 
 .page_title {
@@ -75,15 +76,10 @@ main {
   width: 100%;
 
   @include for-tablet-portrait-up {
-    max-width: 800px;
     padding: 25px 20px 25px 250px;
     text-align: left;
   }
 
-  @include for-desktop-up {
-    width: 80%;
-    max-width: 1000px;
-  }
 }
 
 footer {
@@ -100,4 +96,18 @@ footer {
   box-sizing: border-box;
   border-top: 1px solid #dcdee0;
   border-bottom: 1px solid #dcdee0;
+}
+
+.banner,
+.wrapper,
+.page_title,
+.header_nav .primary,
+.footer_nav,
+.footer .sub-footer {
+  width: 100%;
+
+  @include for-tablet-portrait-up {
+    max-width: 1000px;
+    display: flex;
+  }
 }

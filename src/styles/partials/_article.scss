@@ -1,0 +1,11 @@
+.section {
+  border-top: 1px solid colors(primary, light);
+  margin: 10px auto;
+  padding-top: 20px;
+
+  h2,
+  h3 {
+    margin-bottom: 20px;
+    min-width: 100%;
+  }
+}

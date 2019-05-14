@@ -83,20 +83,10 @@
       @include for-tablet-portrait-up {
         box-sizing: border-box;
         display: flex;
-        max-width: 800px;
-
-        .menu-item:first-child a {
-          padding-left: 0;
-        }
 
         .menu-item:last-child a {
           border: none;
         }
-      }
-
-      @include for-desktop-up {
-        width: 80%;
-        max-width: 1000px;
       }
 
       .menu-item a {

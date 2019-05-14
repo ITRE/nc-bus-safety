@@ -1,0 +1,21 @@
+.flexible {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  @include for-tablet-landscape-up {
+    section,
+    article,
+    p {
+      flex: 1;
+    }
+
+    .wide {
+      min-width: 100%;
+    }
+
+    .half {
+      min-width: 45%;
+    }
+  }
+}
