@@ -1,0 +1,78 @@
+.ncbus_category {
+  background-color: colors(grey, lighter);
+  display: block;
+  margin-bottom: 40px;
+  transition: all .3s;
+
+  &:hover {
+  //  border-right: solid 3px #ccc;
+  //  border-bottom: solid 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+    transform: translateY(-5px);
+  }
+
+  header {
+    background-color: colors(primary, base);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+
+    h2 {
+      color: colors(text, inverse);
+      @include font($font-stack-system, '2', light);
+    }
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  .category_links li {
+    margin: 10px 0;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a:hover h2 {
+    text-decoration: underline;
+  }
+}
+
+.flexible .ncbus_category {
+  width: 100%;
+
+  @include for-tablet-landscape-up {
+    width: 30%;
+  }
+}
+
+
+blockquote,
+.wp-block-pullquote {
+  background-color: colors(primary, base);
+  float: right;
+  margin: 20px auto;
+  padding: 15px;
+
+  p,
+  cite {
+    color: colors(text, inverse);
+  }
+
+  cite {
+    @include font($font-stack-system, '-2', lighter);
+    font-style: italic;
+    float: right;
+
+    &::before {
+      content:'- '
+    }
+  }
+
+}

@@ -21,22 +21,30 @@
 
   .footer_nav {
     margin: auto;
-    padding: 0 20px;
+
+    @include for-tablet-portrait-up {
+      padding: 0 20px;
+    }
   }
 
   .footer_nav ul {
     display: flex;
     flex-flow: row;
 
-    li a {
+    li {
       border-right: 2px solid colors(text, inverse);
+      display: flex;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    a {
+      align-self: center;
       display: block;
       padding: 10px 20px;
       text-decoration: none;
-    }
-
-    li:last-child a {
-      border: none;
     }
 
     .sub-menu {
@@ -49,13 +57,18 @@
   background-color: colors(primary, lighter);
   box-sizing: border-box;
   display: flex;
+  flex-flow: row wrap;
   margin: auto;
   min-height: 20px;
   padding: 20px 10px;
   width: 100%;
 
   section {
-    flex: 1;
+    width: 100%;
+
+    @include for-tablet-portrait-up {
+      flex: 1;
+    }
   }
 
   p,
@@ -64,7 +77,11 @@
   }
 
   .address {
-    text-align: right;
+    text-align: left;
+
+    @include for-tablet-portrait-up {
+      text-align: right;
+    }
 
     h3 {
       @include font($font-stack-system, '1', bold);

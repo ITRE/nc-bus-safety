@@ -54,4 +54,53 @@ function contacts_post_type() {
 
 add_action('init', __NAMESPACE__ . '\\contacts_post_type');
 
+function filter_next_post_sort($sort) {
+  if (get_post_type($post) == 'contacts') {
+      $sort = "ORDER BY p.post_title ASC LIMIT 1";
+  } else if (get_post_type($post) == 'surplus') {
+      $sort = "ORDER BY p.post_title+0 ASC LIMIT 1";
+  } else {
+      $sort = "ORDER BY p.post_date ASC LIMIT 1";
+  }
+  return $sort;
+}
+function filter_next_post_where($where) {
+  global $post, $wpdb;
+  if (get_post_type($post) == 'contacts') {
+      return $wpdb->prepare("WHERE p.post_title > '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'",$post->post_title);
+  } else if (get_post_type($post) == 'surplus') {
+      return $wpdb->prepare("WHERE p.post_title+0 > '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'",$post->post_title+0);
+  } else {
+      return $wpdb->prepare( "WHERE p.post_date > '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'", $post->post_date, $post->post_type );
+  }
+}
+
+function filter_previous_post_sort($sort) {
+  if (get_post_type($post) == 'contacts') {
+      $sort = "ORDER BY p.post_title DESC LIMIT 1";
+  } else if (get_post_type($post) == 'surplus') {
+      $sort = "ORDER BY p.post_title+0 DESC LIMIT 1";
+  } else {
+      $sort = "ORDER BY p.post_date DESC LIMIT 1";
+  }
+  return $sort;
+}
+function filter_previous_post_where($where) {
+  global $post, $wpdb;
+  if (get_post_type($post) == 'contacts') {
+      return $wpdb->prepare("WHERE p.post_title < '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'",$post->post_title);
+  } else if (get_post_type($post) == 'surplus') {
+      return $wpdb->prepare("WHERE p.post_title+0 < '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'",$post->post_title+0);
+  } else {
+      return $wpdb->prepare( "WHERE p.post_date < '%s' AND p.post_type = '". get_post_type($post)."' AND p.post_status = 'publish'", $post->post_date, $post->post_type );
+  }
+}
+
+add_filter('get_next_post_sort', __NAMESPACE__ . '\\filter_next_post_sort');
+add_filter('get_next_post_where', __NAMESPACE__ . '\\filter_next_post_where');
+
+add_filter('get_previous_post_sort', __NAMESPACE__ . '\\filter_previous_post_sort');
+add_filter('get_previous_post_where', __NAMESPACE__ . '\\filter_previous_post_where');
+
+
 ?>

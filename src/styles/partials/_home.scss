@@ -1,0 +1,19 @@
+.page_banner {
+  padding: 40px 0;
+
+
+  @include for-tablet-portrait-up {
+    max-width: 1000px;
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+.banner_image {
+  width: 100%;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}

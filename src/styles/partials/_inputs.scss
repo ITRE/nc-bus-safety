@@ -1,0 +1,202 @@
+// General
+
+input,
+textarea,
+select {
+  background-color: $background;
+  border: 1px solid gray;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: block;
+  margin: 10px auto;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+label {
+  position: relative;
+}
+
+select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 10px), calc(100% - 5px);
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  height: 30px;
+  padding-right:20px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+label,
+button {
+  box-sizing: border-box;
+  display: block;
+  margin: 20px auto;
+  text-align: left;
+}
+
+// Buttons
+
+button,
+.button {
+  background-color: colors(primary, base);
+  border: 2px solid colors(primary, base);
+  border-radius: 5px;
+  color: colors(text, inverse);
+  display: inline-block;
+  margin: 20px 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  &.cancel {
+    background-color: colors(secondary, base);
+    border: 2px solid colors(secondary, base);
+  }
+
+  &:hover {
+    background-color: $background;
+    color: colors(primary, dark);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &.cancel:hover {
+    color: colors(secondary, dark);
+  }
+
+  &.link {
+    background-color: transparent;
+    border: none;
+    color: colors(primary, dark);
+    padding: 0;
+    text-decoration: none;
+
+    &.dark {
+      color: colors(primary, base);
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: colors(primary, base);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+// On/Off Toggle
+
+.toggle_container {
+  align-self: center;
+  text-align: center;
+  width: 80px;
+}
+
+.flexible .toggle_container {
+  margin: 20px 30px 20px 0;
+}
+
+.toggle {
+  background: #f0f0f0;
+	border-radius: 2em;
+  box-sizing: border-box;
+	padding: 2px;
+	transition: all .4s ease;
+  outline: 0;
+	display: block;
+	width: 80px;
+	height: 40px;
+	position: relative;
+	cursor: pointer;
+  user-select: none;
+
+  &:after,
+  &:before {
+		position: relative;
+		display: block;
+		content: "";
+		width: 50%;
+		height: 100%;
+	}
+
+  &:before {
+		display: none;
+	}
+
+	&:after {
+		border-radius: 50%;
+		background: #fff;
+    left: 0;
+		transition: all .2s ease;
+	}
+}
+
+.toggle_input {
+  display: none;
+
+  &:checked + .toggle {
+		background: #9FD6AE;
+
+    &:after {
+      left: 50%;
+    }
+	}
+}
+
+// Range Slider
+
+input[type="range"]::range-thumb {
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  background-color: colors(primary, base);
+  position:relative;
+  z-index:3;
+  box-shadow:0 0 5px 0 rgba(0,0,0,0.3);
+
+}
+
+input[type="range"] {
+  background: linear-gradient(to right, colors(primary, light) 0%, colors(primary, light) 100%);
+  background-position:center;
+  background-size:100% 10px;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  height:20px;
+  margin: 5px 0;
+  padding: 19px 0;
+  overflow:hidden;
+  outline: none;
+  width:calc(100% - 105px);
+  -webkit-appearance: none;
+}
+
+.tag {
+  background-color: colors(primary, base);
+  border-radius: 10px 10px 10px 0;
+  bottom: 5px;
+  height: 30px;
+  left: calc(100% - 92px);
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.range_label {
+  background-color: colors(primary, base);
+  border-radius: 0 10px 10px 0;
+  bottom: 3px;
+  color: colors(text, inverse);
+  left: calc(100% - 80px);
+  padding: 9px 10px 9px 0;
+}
+
+.range_label,
+.tag {
+  position: absolute;
+}

@@ -3,7 +3,7 @@ Theme Name: NC Bus Safety
 Author: Devin Cremins
 Author URI: http://octopusoddments.com/
 Description: 2019 Website Redesign for NC Bus Safety and sub-sites
-Version: 0.3.0
+Version: 1.0.1
 */
 @import 'partials/reset';
 
@@ -14,9 +14,13 @@ Version: 0.3.0
 
 @import 'partials/body';
 @import 'partials/typography';
+@import 'partials/inputs';
 @import 'partials/nav';
 @import 'partials/flex';
 @import 'partials/article';
+@import 'partials/blocks';
+@import 'partials/home';
 @import 'partials/surplus';
+@import 'partials/contacts';
 @import 'partials/footer';
 @import 'partials/search';

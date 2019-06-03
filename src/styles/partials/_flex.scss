@@ -3,11 +3,43 @@
   flex-flow: row wrap;
   justify-content: space-between;
 
+  section,
+  article,
+  p,
+  div,
+  .flex_fill,
+  .wide,
+  .half,
+  .third {
+    flex: 100%;
+  }
+
+  .wide {
+    margin: .5em auto;
+  }
+
+  @include for-tablet-portrait-up {
+    .flex_fill {
+      flex: 1;
+    }
+
+    .third {
+      min-width: 30%;
+    }
+  }
+
+
   @include for-tablet-landscape-up {
     section,
     article,
+    .flex_fill,
     p {
       flex: 1;
+    }
+
+    div {
+      flex: none;
+      width: auto;
     }
 
     .wide {
@@ -16,6 +48,10 @@
 
     .half {
       min-width: 45%;
+    }
+
+    .third {
+      min-width: 30%;
     }
   }
 }

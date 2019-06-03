@@ -1,6 +1,9 @@
 html,
 body {
   box-sizing: border-box;
+}
+
+body {
   display: flex;
   flex-direction:column;
   height: 100vh;
@@ -43,6 +46,17 @@ main {
       flex: 1;
       margin: 0 auto;
     }
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+
+  @include for-tablet-portrait-up {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 }
 

@@ -9,9 +9,11 @@
     .search-submit {
       align-self: center;
       background-color: colors(primary, base);
+      border-radius: 0 5px 5px 0;
       color: colors(text, inverse);
-      height: 22px;
-      padding: 3px 8px;
+      height: 32px;
+      margin: 0;
+      padding: 3px 5px;
       width: 30px;
     }
 
@@ -19,6 +21,7 @@
       align-self: center;
       box-sizing: border-box;
       flex: 1;
+      margin: 0;
 
       input {
         border-radius: 0;
@@ -27,6 +30,10 @@
       }
     }
   }
+}
+
+.search_category {
+  margin-bottom: 35px;
 }
 
 .search-form {

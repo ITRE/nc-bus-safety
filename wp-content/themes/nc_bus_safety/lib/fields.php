@@ -54,7 +54,6 @@ function custom_columns( $columns ) {
    );
   return $columns;
 }
-
 add_filter('manage_surplus_posts_columns' , __NAMESPACE__ . '\\custom_columns');
 
 function custom_columns_data( $column, $post_id ) {
@@ -76,7 +75,6 @@ function custom_columns_data( $column, $post_id ) {
       break;
   }
 }
-
 add_action( 'manage_surplus_posts_custom_column' , __NAMESPACE__ . '\\custom_columns_data', 10, 2 );
 
 function sorting_columns( $columns ) {

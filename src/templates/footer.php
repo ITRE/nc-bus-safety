@@ -1,5 +1,6 @@
 <footer class="footer">
 		<section class="container">
+			<?php if (!is_page_template( 'page-homepage.php' )) { ?>
 			<nav role="navigation" id="sub_nav" class="footer_nav">
 				<?php
 					$args = array(
@@ -7,12 +8,13 @@
 						'menu_class' => 'secondary',
 						'depth' => 0,
 						'title_li' => false,
-						'theme_location' => 'header-nav',
+						'theme_location' => 'footer-nav',
 					);
 
 					wp_nav_menu($args);
 				?>
 			</nav>
+		<?php } ?>
 		</section>
 		<section class="sub-footer">
 			<section>

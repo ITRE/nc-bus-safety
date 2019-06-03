@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<vehicle_county><![CDATA[56]]></vehicle_county>
+		<post_title><![CDATA[599]]></post_title>
+		<vehicle_vin><![CDATA[1FDWJ74N6HVA06336]]></vehicle_vin>
+		<vehicle_year><![CDATA[1987]]></vehicle_year>
+		<vehicle_make><![CDATA[Ford]]></vehicle_make>
+		<vehicle_lift><![CDATA[0]]></vehicle_lift>
+		<vehicle_state_size><![CDATA[54]]></vehicle_state_size>
+		<vehicle_state_mileage><![CDATA[0]]></vehicle_state_mileage>
+		<price><![CDATA[100.00]]></price>
+		<status><![CDATA[Sold]]></status>
+		<bus_notes><![CDATA[]]></bus_notes>
+		<sale_sale_notes><![CDATA[]]></sale_sale_notes>
+		<sale_sale_amount><![CDATA[100]]></sale_sale_amount>
+		<sale_sale_date><![CDATA[6/30/02]]></sale_sale_date>
+	</node>
+</data>

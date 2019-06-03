@@ -1,7 +1,9 @@
 const hamburger = document.getElementById('mobile_button')
 let mobileActive = false
 
-hamburger.addEventListener('click', toggleMobile)
+if (hamburger) {
+  hamburger.addEventListener('click', toggleMobile)
+}
 
 function toggleMobile() {
   console.log(mobileActive)

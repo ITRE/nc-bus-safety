@@ -11,6 +11,7 @@
 
   &:hover {
     border-bottom: 2px solid colors(primary, base);
+    cursor: pointer;
   }
 
   .mobile-hide {
@@ -30,10 +31,43 @@
   }
 
   @include for-tablet-landscape-up {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr .8fr 1fr 1.25fr 1.25fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr .8fr 1fr 1.25fr 1fr;
 
     .desktop-only {
       display: block;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .right {
+    text-align: right;
+    padding-right: 25px;
+  }
+
+  .pad i {
+    padding-right: 25px;
+  }
+
+  div,
+  a {
+    position: relative;
+
+    &:first-child {
+      padding-left: 20px;
+    }
+
+    .fa-sort-numeric-down,
+    .fa-sort-numeric-up,
+    .fa-sort-alpha-down,
+    .fa-sort-alpha-up,
+    .fa-long-arrow-alt-down,
+    .fa-long-arrow-alt-up {
+      bottom: 0;
+      right: 0;
+      position: absolute;
     }
   }
 }

@@ -7,7 +7,7 @@
   			'menu_class' => 'primary',
   			'depth' => 0,
   			'title_li' => false,
-  			'theme_location' => 'header-nav',
+  			'theme_location' => 'header-nav-fleet',
   		);
 
   		wp_nav_menu($args);
@@ -27,7 +27,7 @@
           'container' => false,
           'depth' => 0,
           'title_li' => false,
-          'theme_location' => 'header-nav',
+          'theme_location' => 'header-nav-fleet',
         );
         wp_nav_menu($args);
       ?>

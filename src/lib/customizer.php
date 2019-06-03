@@ -82,4 +82,7 @@ function customize_register($wp_customize) {
 }
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 
+/* Page Featured Image */
+add_theme_support( 'post-thumbnails', array( 'page' ) );
+
 ?>
