@@ -30,7 +30,13 @@
           // Render non-Advanced search when cpt are present
           } else {
             if (class_exists('acf')) {
-              $types = array('post', 'page', 'surplus', 'contacts');
+              $types = array('post', 'page');
+              if ( post_type_exists( 'surplus' ) ) {
+                 $types[] ='surplus';
+              }
+              if ( post_type_exists( 'contacts' ) ) {
+                $types[] ='contacts';
+              }
               foreach( $types as $type ){
                 echo '<section class="search_category">';
                 echo '<h3>' . ucfirst($type) . '</h3>';
