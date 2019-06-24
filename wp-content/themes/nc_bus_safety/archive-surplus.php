@@ -52,6 +52,10 @@
         get_template_part( 'templates/header', 'surplus' );
         while ( $the_query->have_posts() ) : $the_query->the_post();
           get_template_part('templates/content', 'surplus');
+	      <div class='container post-nav'>
+    		<div style="float:left;"><?php previous_post_link('%link', '<i class="fas fa-long-arrow-alt-left"></i> Previous listing'); ?></div>
+    		<div style="float:right;"><?php next_post_link('%link', 'Next listing <i class="fas fa-long-arrow-alt-right"></i>'); ?> </div>
+    	      </div>
         endwhile;
       endif;?>
       </section>
